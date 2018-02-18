@@ -1,0 +1,23 @@
+# Ignore everything
+*
+
+# Whitelist anything that's a directory
+!*/
+
+# ignore certain directory
+./movie
+./image
+./data
+
+# I'm interested in
+!.gitignore
+!*.py
+!*.cpp
+!*.h
+!*.ini
+!*.md
+!Makefile
+!*.swift
+
+# ignore jupyter notebook
+.ipynb_checkpoints
