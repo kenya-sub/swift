@@ -1,23 +1,25 @@
-# Ignore everything
-*
+# Xcode (from gitignore.io)
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
 
-# Whitelist anything that's a directory
-!*/
+# CocoaPod
+Pods/*
 
-# ignore certain directory
-./movie
-./image
-./data
-
-# I'm interested in
-!.gitignore
-!*.py
-!*.cpp
-!*.h
-!*.ini
-!*.md
-!Makefile
-!*.swift
-
-# ignore jupyter notebook
-.ipynb_checkpoints
+# others
+*.swp
+!.gitkeep
+.DS_Store
