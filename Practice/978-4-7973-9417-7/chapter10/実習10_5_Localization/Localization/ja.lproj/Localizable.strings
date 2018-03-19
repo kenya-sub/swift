@@ -1,0 +1,8 @@
+/* 
+  Localizable.strings
+  Localization
+
+  Created by 高橋 京介 on 2017/10/27.
+  Copyright © 2017年 Kyosuke Takahashi. All rights reserved.
+*/
+"Hello" = "こんにちは";
