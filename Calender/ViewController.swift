@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+class ViewController: UINavigationController ,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     private var myCollectView:UICollectionView!
     //セルの余白
@@ -19,11 +19,15 @@ class ViewController: UIViewController ,UICollectionViewDelegate,UICollectionVie
     let dateManager = DateManager()
     var startDate:Date!
     
+    
+    
     //表示する年月のラベル
     private var monthLabel:UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        print(self.navigationController)
         
         let barHeight = UIApplication.shared.statusBarFrame.size.height
         let width = self.view.frame.width
@@ -64,6 +68,7 @@ class ViewController: UIViewController ,UICollectionViewDelegate,UICollectionVie
             monthLabel.text = String(month / 100) + "年" + String(month % 100) + "月"
         }
         self.view.addSubview(monthLabel)
+        
     }
     
     //セクションの数
@@ -89,10 +94,15 @@ class ViewController: UIViewController ,UICollectionViewDelegate,UICollectionVie
         let height:CGFloat = width * 2.0
         return CGSize(width:width,height:height)
     }
-    
-    //選択した時
+    	
+    //セルを選択した時
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        let nextVC = ScheduleViewController()
+        print(self)
+        if (self.navigationController == nil){
+            print("Nil")
+        }
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     //セルの総数
@@ -168,7 +178,7 @@ class ViewController: UIViewController ,UICollectionViewDelegate,UICollectionVie
     // 日付がタップされ、画面遷移を行う
     func onTappedDay(_ sender: UIButton) {
         print(sender)
-        let vc = ScheduleViewController(titleName: "date")
+        let vc = ScheduleViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 }
